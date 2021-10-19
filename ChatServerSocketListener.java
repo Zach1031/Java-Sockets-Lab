@@ -36,8 +36,8 @@ public class ChatServerSocketListener  implements Runnable {
     }
 
     private void processChatMessage(MessageDM_Chat m){
-        System.out.println("Chat recieved from " + client.getUserName() + " for " + m.userName + "- broadcasting");
-        broadcast(new MessageStoC_Chat(client.getUserName(), m.msg), client, m.userName);
+        System.out.println("Chat recieved from " + client.getUserName() + " for " + m.recieverName + "- broadcasting");
+        broadcast(new MessageStoC_Chat(client.getUserName(), m.msg), client, m.recieverName);
     }
 
 

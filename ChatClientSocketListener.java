@@ -17,6 +17,12 @@ public class ChatClientSocketListener implements Runnable {
         System.out.println(m.userName + " joined the server!");
     }
 
+    private void processDM(MessageDM_Chat m){
+        System.out.println(m.senderName + "to " + m.recieverName + ": " + m.msg);
+    }
+
+
+
     private void processExitMessage(MessageStoC_Exit m) {
         System.out.println(m.userName + " left the server!");
     }
@@ -32,6 +38,9 @@ public class ChatClientSocketListener implements Runnable {
                 }
                 else if (msg instanceof MessageStoC_Chat) {
                     processChatMessage((MessageStoC_Chat) msg);
+                }
+                else if(msg instanceof MessageDM_Chat){
+                    processDM((MessageDM_Chat) msg);
                 }
                 else if (msg instanceof MessageStoC_Exit) {
                     processExitMessage((MessageStoC_Exit) msg);
