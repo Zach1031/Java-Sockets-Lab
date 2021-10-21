@@ -14,6 +14,7 @@ public class MessageStoC_Chat extends Message {
     }
 
     public void changeColor(String color){
-        msg = color + msg;
+        //The string afterwords resets the console to white once the message is written
+        msg = color + msg + "\u001B[0m";
     }
 }
