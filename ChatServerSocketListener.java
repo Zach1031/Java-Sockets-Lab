@@ -58,6 +58,9 @@ public class ChatServerSocketListener  implements Runnable {
                 }
             }
             else {
+                ((MessageStoC_Chat)m).changeColor("\u001b[32m;");
+                
+                       
                 System.out.println("broadcasting: " + m);
                 for (ClientConnectionData c : clientList) {
                     // if c equals skipClient, then c.
