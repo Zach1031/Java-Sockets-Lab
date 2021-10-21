@@ -12,4 +12,8 @@ public class MessageStoC_Chat extends Message {
     public String toString() {
         return "Chat Message from " + userName + ": " + msg;
     }
+
+    public void changeColor(String color){
+        msg = color + msg;
+    }
 }

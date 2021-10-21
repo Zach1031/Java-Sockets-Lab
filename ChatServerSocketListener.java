@@ -50,6 +50,8 @@ public class ChatServerSocketListener  implements Runnable {
             if (targetClient != null) {
                 for (ClientConnectionData c : clientList) {
                     if ((c.getUserName() != null) && c.getUserName().equals(targetClient)) {
+                        //The code below is the ANSI code for light blue
+                        ((MessageStoC_Chat)m).changeColor("\u001B[36m");
                         c.getOut().writeObject(m);
                         break;
                     }
